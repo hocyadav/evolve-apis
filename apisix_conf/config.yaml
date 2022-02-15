@@ -25,7 +25,9 @@ etcd:
   prefix: "/apisix"
   timeout: 30
 plugins:
+  - serverless-pre-function        # priority: 10000
   - key-auth                       # priority: 2500
+  - proxy-mirror                   # priority: 1010
   - proxy-rewrite                  # priority: 1008
   - redirect                       # priority: 900
   - prometheus                     # priority: 500
